@@ -6,7 +6,7 @@
   window.MAI_LOCALES = window.MAI_LOCALES || {};
 
   window.MAI_LOCALES.es = {
-    page: { title: 'modernisAI  Soluciones de IA Empresarial', lang: 'es' },
+    page: { title: 'systemisAI', lang: 'es' },
 
     nav: {
       products:    'Productos',
@@ -21,7 +21,7 @@
       headline1:    'Acelera tus procesos con',
       headline2:    'Inteligencia Artificial',
       subheading:   'Automatiza flujos de trabajo, optimiza operaciones y obtene una ventaja competitiva con soluciones de IA de vanguardia, listas para desplegar o construidas a medida de tu negocio.',
-      ctaPrimary:   'Hablar con un experto',
+      ctaPrimary:   'Agenda tu reunion',
       ctaSecondary: 'Ver soluciones',
     },
 
@@ -47,7 +47,7 @@
         desc: 'Soluciones personalizadas. Consultoria, disenio, entrenamiento y despliegue de modelos exclusivos construidos para tus casos de uso.',
         feature1: 'Construi tu producto ideal',
         feature2: 'Modelos de Machine Learning predictivos',
-        cta: 'Diseniar una solucion',
+        cta: 'Diseñar una solucion',
       },
     },
 
@@ -70,7 +70,7 @@
     whyUs: {
       eyebrow:  'Beneficios',
       title:    'Por que elegirnos',
-      subtitle: 'Lo que nos distingue y por que las empresas lideres confian en modernisAI para transformar sus operaciones.',
+      subtitle: 'Lo que nos distingue y por que las empresas lideres confian en systemisAI para transformar sus operaciones.',
       bilingual:  { title: 'Soporte bilingue fluido',                    desc: 'Soporte tecnico en espaniol e ingles, sin barreras de comunicacion para tu equipo u organizacion.' },
       tailored:   { title: '100% Adaptado a tu flujo de trabajo',        desc: 'Cada solucion se disenio en torno a tus procesos, herramientas y necesidades de negocio especificas. Sin plantillas genericas.' },
       results:    { title: 'Orientados a resultados',                    desc: 'Medimos el exito en ROI real: ahorro de tiempo, reduccion de costos operativos y metricas concretas desde el primer mes.' },
@@ -82,7 +82,27 @@
     cta: {
       title:    'Transforma tu organizacion hoy',
       subtitle: 'Agenda una sesion estrategica y descubri el ROI real de implementar inteligencia artificial en los procesos de tu empresa.',
-      button:   'Solicitar una demo',
+      button:   'Agenda tu reunion',
+    },
+
+    modal: {
+      title:              'Agenda tu reunion',
+      subtitle:           'Completá tus datos y nos ponemos en contacto en menos de 24 horas.',
+      name:               'Nombre completo',
+      namePlaceholder:    'Juan Perez',
+      role:               'Cargo',
+      rolePlaceholder:    'CEO, Gerente de Operaciones…',
+      email:              'Email',
+      emailPlaceholder:   'vos@empresa.com',
+      phone:              'Numero de telefono',
+      phonePlaceholder:   '+54 9 00 0000 0000',
+      company:            'Empresa',
+      companyPlaceholder: 'Nombre de tu empresa',
+      message:            'Mensaje',
+      messagePlaceholder: 'Preguntas, propuestas o lo que quieras contarnos…',
+      submit:             'Enviar',
+      errorMsg:           'Por favor, completá todos los campos antes de enviar.',
+      successMsg:         '¡Gracias! Nos estaremos comunicando por correo electrónico a la brevedad.',
     },
   };
 }());

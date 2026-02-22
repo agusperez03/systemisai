@@ -6,7 +6,7 @@
   window.MAI_LOCALES = window.MAI_LOCALES || {};
 
   window.MAI_LOCALES.en = {
-    page: { title: 'modernisAI  Enterprise AI Solutions', lang: 'en' },
+    page: { title: 'systemisAI', lang: 'en' },
 
     nav: {
       products:    'Products',
@@ -21,7 +21,7 @@
       headline1:    'Accelerate your processes with',
       headline2:    'Artificial Intelligence',
       subheading:   'Automate workflows, optimize operations and gain a competitive edge with cutting-edge AI solutions  ready to deploy or built to fit your business.',
-      ctaPrimary:   'Talk to an expert',
+      ctaPrimary:   'Schedule your meeting',
       ctaSecondary: 'Explore solutions',
     },
 
@@ -70,7 +70,7 @@
     whyUs: {
       eyebrow:  'Benefits',
       title:    'Why Choose Us',
-      subtitle: 'What sets us apart and why leading companies trust modernisAI to transform their operations.',
+      subtitle: 'What sets us apart and why leading companies trust systemisAI to transform their operations.',
       bilingual:  { title: 'Fluent Bilingual Support',            desc: 'Technical support in English and Spanish  no communication barriers for your team or organisation.' },
       tailored:   { title: '100% Tailored to Your Workflow',      desc: 'Every solution is designed around your processes, tools and specific business needs. No generic templates.' },
       results:    { title: 'Results-Driven',                      desc: 'We measure success in real ROI: time savings, operational cost reduction and concrete metrics from month one.' },
@@ -82,7 +82,27 @@
     cta: {
       title:    'Transform Your Organisation Today',
       subtitle: 'Schedule a strategic session and discover the real ROI of implementing artificial intelligence in your company processes.',
-      button:   'Request a demo',
+      button:   'Schedule your meeting',
+    },
+
+    modal: {
+      title:              'Schedule your meeting',
+      subtitle:           'Fill in your details and we will get back to you within 24 hours.',
+      name:               'Full Name',
+      namePlaceholder:    'Jane Doe',
+      role:               'Job Title',
+      rolePlaceholder:    'CEO, Operations Manager…',
+      email:              'Email',
+      emailPlaceholder:   'you@company.com',
+      phone:              'Phone Number',
+      phonePlaceholder:   '+1 555 000 0000',
+      company:            'Company',
+      companyPlaceholder: 'Your company name',
+      message:            'Message',
+      messagePlaceholder: 'Questions, proposals or anything you would like us to know…',
+      submit:             'Send',
+      errorMsg:           'Please fill in all required fields before sending.',
+      successMsg:         'Thank you! We will get back to you by email shortly.',
     },
   };
 }());
