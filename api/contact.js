@@ -32,41 +32,42 @@ module.exports = async function handler(req, res) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  try {
-    await resend.emails.send({
-      from:    FROM_ADDRESS,
-      to:      TO_ADDRESS,
-      replyTo: email,
-      subject: `[Systemis] Nuevo contacto: ${name} — ${company}`,
-      html: `
-        <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#0F172A;color:#E5E7EB;padding:32px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);">
-          <h2 style="color:#60a5fa;margin-top:0;">Nuevo mensaje de contacto</h2>
+  const { data, error } = await resend.emails.send({
+    from:    FROM_ADDRESS,
+    to:      [TO_ADDRESS],
+    replyTo: email,
+    subject: `[Systemis] Nuevo contacto: ${name} — ${company}`,
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#0F172A;color:#E5E7EB;padding:32px;border-radius:16px;border:1px solid rgba(255,255,255,0.08);">
+        <h2 style="color:#60a5fa;margin-top:0;">Nuevo mensaje de contacto</h2>
 
-          <table style="width:100%;border-collapse:collapse;font-size:14px;">
-            <tr><td style="padding:10px 0;color:#9CA3AF;width:140px;">Nombre</td>      <td style="padding:10px 0;color:#F9FAFB;font-weight:500;">${escHtml(name)}</td></tr>
-            <tr><td style="padding:10px 0;color:#9CA3AF;">Cargo</td>        <td style="padding:10px 0;color:#F9FAFB;">${escHtml(role)}</td></tr>
-            <tr><td style="padding:10px 0;color:#9CA3AF;">Email</td>        <td style="padding:10px 0;"><a href="mailto:${escHtml(email)}" style="color:#60a5fa;">${escHtml(email)}</a></td></tr>
-            <tr><td style="padding:10px 0;color:#9CA3AF;">Teléfono</td>     <td style="padding:10px 0;color:#F9FAFB;">${escHtml(phone)}</td></tr>
-            <tr><td style="padding:10px 0;color:#9CA3AF;">Empresa</td>      <td style="padding:10px 0;color:#F9FAFB;">${escHtml(company)}</td></tr>
-          </table>
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <tr><td style="padding:10px 0;color:#9CA3AF;width:140px;">Nombre</td>   <td style="padding:10px 0;color:#F9FAFB;font-weight:500;">${escHtml(name)}</td></tr>
+          <tr><td style="padding:10px 0;color:#9CA3AF;">Cargo</td>       <td style="padding:10px 0;color:#F9FAFB;">${escHtml(role)}</td></tr>
+          <tr><td style="padding:10px 0;color:#9CA3AF;">Email</td>       <td style="padding:10px 0;"><a href="mailto:${escHtml(email)}" style="color:#60a5fa;">${escHtml(email)}</a></td></tr>
+          <tr><td style="padding:10px 0;color:#9CA3AF;">Teléfono</td>    <td style="padding:10px 0;color:#F9FAFB;">${escHtml(phone)}</td></tr>
+          <tr><td style="padding:10px 0;color:#9CA3AF;">Empresa</td>     <td style="padding:10px 0;color:#F9FAFB;">${escHtml(company)}</td></tr>
+        </table>
 
-          <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
-            <p style="margin:0 0 8px;color:#9CA3AF;font-size:13px;text-transform:uppercase;letter-spacing:.06em;">Mensaje</p>
-            <p style="margin:0;color:#F9FAFB;white-space:pre-wrap;">${escHtml(message)}</p>
-          </div>
-
-          <p style="margin-top:24px;font-size:12px;color:#4B5563;">
-            Enviado desde el formulario de contacto de systemisAI.
-          </p>
+        <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.07);">
+          <p style="margin:0 0 8px;color:#9CA3AF;font-size:13px;text-transform:uppercase;letter-spacing:.06em;">Mensaje</p>
+          <p style="margin:0;color:#F9FAFB;white-space:pre-wrap;">${escHtml(message)}</p>
         </div>
-      `,
-    });
 
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('[contact] Resend error:', err);
-    return res.status(500).json({ error: 'Failed to send email' });
+        <p style="margin-top:24px;font-size:12px;color:#4B5563;">
+          Enviado desde el formulario de contacto de systemisAI.
+        </p>
+      </div>
+    `,
+  });
+
+  if (error) {
+    console.error('[contact] Resend error:', JSON.stringify(error));
+    return res.status(500).json({ error: error.message || 'Failed to send email' });
   }
+
+  console.log('[contact] Email sent, id:', data.id);
+  return res.status(200).json({ ok: true, id: data.id });
 };
 
 /** Basic HTML entity escaping to prevent injection in the email body */
