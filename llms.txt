@@ -1,0 +1,35 @@
+# systemisAI
+
+> Enterprise AI solutions company based in Argentina, serving Latin America, Spain and the United States. We build and deploy AI-powered products and custom architectures that automate business processes and deliver measurable ROI from month one.
+
+## What we do
+
+systemisAI helps companies adopt Artificial Intelligence through three service lines:
+
+- **Atendi** — Enterprise conversational agent that automates customer support, sales, bookings and FAQs via WhatsApp. Ready to deploy in days.
+- **Agili** — AI-powered Project Manager that lives inside your existing tools (Notion, Slack, Jira, etc.), connects your data and turns ideas into executable tasks automatically.
+- **Custom AI** — End-to-end consulting, design, training and deployment of bespoke AI models, RAG systems, LLM pipelines and autonomous agents tailored to specific business use cases.
+
+## Our process
+
+1. **Discovery** — Analyse workflows and identify high-impact automation opportunities.
+2. **Selection** — Choose the right product or design a fully custom AI architecture.
+3. **Implementation** — Secure deployment, system integration and performance testing.
+4. **Evolution** — Continuous monitoring, model refinement and guaranteed scalability.
+
+## Why companies choose us
+
+- Bilingual support (Spanish & English)
+- Solutions built around your specific processes — no generic templates
+- Results measured in real ROI: time saved, costs reduced, concrete metrics
+- Short delivery cycles, no endless projects
+- Continuous post-launch support
+
+## Contact
+
+- Email: systemis.ia@gmail.com
+- Website: https://systemis-ia.vercel.app/
+
+## Languages supported
+
+Spanish (primary), English
