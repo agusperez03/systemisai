@@ -1,6 +1,6 @@
 # systemisAI
 
-> Enterprise AI solutions company based in Argentina, serving Latin America, Spain and the United States. We build and deploy AI-powered products and custom architectures that automate business processes and deliver measurable ROI from month one.
+> AI Solutions company based in Argentina, serving Latin America, Spain and the United States. We build and deploy AI-powered products and custom architectures that automate business processes and deliver measurable ROI from month one.
 
 ## What we do
 
